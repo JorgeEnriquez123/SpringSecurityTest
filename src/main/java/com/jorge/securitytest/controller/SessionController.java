@@ -27,8 +27,8 @@ public class SessionController {
     @GetMapping("/expired")
     public String expiredSession(){
         return "Your session has expired! " +
-                "This may have happened because you signed in on another device " +
-                "So your previous session (this one) is now expired.";
+                "This was triggered because you might have signed in on another device " +
+                "or your session ended because of inactivity.";
     }
     /*@GetMapping("/invalid")
     public String invalidSession(){

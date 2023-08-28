@@ -19,12 +19,12 @@ public class BasicController {
 
     @GetMapping("/p1")
     public String securedMessage1(){
-        return "Secured message 1 - FOR ADMINS";
+        return "You have signed in! - YOU ARE AN ADMIN";
     }
 
     @GetMapping("/p2")
     public String securedMessage2(){
-        return "Secured message 2 - FOR USERS";
+        return "You have signed in! - YOU ARE AN USER";
     }
 
     @GetMapping("/profile")
@@ -35,11 +35,17 @@ public class BasicController {
 
     @GetMapping("/home")
     public String homePage(){
-        return "Welcome! You've signed in";
+        return "Welcome User! You've signed in";
+        // I used a customSuccessHandler so this endpoint is not used unless sendRedirect is changed or defaultSuccessUrl is used.
     }
 
     @GetMapping("/goodbye")
     public String logoutPage(){
         return "You've just signed out. Bye!";
+    }
+
+    @GetMapping("/noaccess")
+    public String notAllowed(){
+        return "Hey, this page is for admins. you are not allowed to be here!";
     }
 }
